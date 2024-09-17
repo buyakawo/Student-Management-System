@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .analysis-container {
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px #0000001a;
+            width: 1200px; 
+            max-width: 100%;
+            padding: 20px;
+            margin-bottom: 20px; 
+            min-height: 80vh; 
+        }
+        
+        .analysis-container h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .analysis-container img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .back-link a {
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .back-link a:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="analysis-container">
+        <h2>Analysis Report</h2>
+        <img src="{{ url_for('static', filename='gender_ratio.png') }}" alt="Gender Ratio by Major">
+        <img src="{{ url_for('static', filename='average_test_scores.png') }}" alt="Average Test Scores by Major">
+        <img src="{{ url_for('static', filename='age_vs_test_scores.png') }}" alt="Relationship Between Age and Test Scores">
+        <img src="{{ url_for('static', filename='regional_vs_test_scores.png') }}" alt="Regional Distribution vs. Test Scores">
+        <img src="{{ url_for('static', filename='custom_analysis.png') }}" alt="Custom Analysis - Students and Their Courses with Test Scores">
+        <div class="back-link">
+            <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d5e5cd; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .dashboard-container {
+            text-align: center;
+            background-color: #fff; 
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px #0000001a;
+            width: 800px; 
+            max-width: 90%;
+            overflow: hidden;
+            padding: 20px;
+            margin-top: 20px; 
+        }
+        
+        .dashboard-container h2 {
+            font-size: 24px; 
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        ul li {
+            margin-bottom: 10px;
+        }
+        
+        ul li a {
+            display: block;
+            padding: 10px;
+            background-color: #28a745; 
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        ul li a:hover {
+            background-color: #218838; 
+        }
+        
+        .logout-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .logout-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        .logout-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body> 
+    <div class="dashboard-container">
+        <h2>Welcome, {{ student_name }}</h2>
+        <ul>
+            <li><a href="{{ url_for('update') }}">Update Information</a></li>
+            <li><a href="#">Choose Courses</a></li>
+            <li><a href="#">Manage Accommodation</a></li>
+            <li><a href="#">Buy Books</a></li>
+            <li><a href="{{ url_for('reports') }}">View Analysis</a></li> 
+        </ul>
+        <div class="logout-link">
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-image">
+            <img src="{{ url_for('static', filename='Sichuan_university_logo.png') }}" alt="Login Image">
+        </div>
+        <div class="login-form">
+            <h2>Student Login</h2>
+            <form class="form-group" action="{{ url_for('login') }}" method="post">
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="form-control" name="username" id="username" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" class="form-control" name="password" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">LOGIN</button>
+            </form>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+            {% if msg %}
+                <div id="msg">{{ msg }}</div>
+            {% endif %}
+            <div class="register-link">
+                <p>Create your Account <a href="{{ url_for('register') }}">→</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
